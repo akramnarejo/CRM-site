@@ -1,0 +1,15 @@
+{%  extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+
+<form action="" method="POST">
+    <h1 class="mt-md-5">Create Order</h1>
+    {% csrf_token %}
+    {{ form }}
+    <br>
+    <button type="submit" value="Submit" class="btn btn-sm btn-primary mt-md-3">Create</button>
+    <button type="submit" value="submit" class="btn btn-sm btn-primary mt-md-3 ml-md-2"><a href="{% url 'home' %}" class="text-decoration-none text-white">Back</a></button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{%  extends 'main.html' %}
+
+{% block content %}
+
+
+<form action="" method="POST">
+    <h1 class="mt-md-5">Create Customer</h1>
+    {% csrf_token %}
+    {{ form }}
+    <br>
+    <button type="submit" value="Submit" class="btn btn-sm btn-primary mt-md-3 ">Create</button>
+</form>
+
+{% endblock %}

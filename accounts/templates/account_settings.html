@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card card-body">
+            <a class="btn btn-warning" href="{% url 'home' %}">&#8592; Back to Profile</a>
+            <hr>
+            <h4 style="text-align: center;">Account Settings</h4>
+            <hr>
+            <img class="img-fluid rounded-circle" src="{{request.user.customer.profile_pic.url}}" alt="">
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="card card-body">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="row">
+                        <div class="col-md-2 my-2">
+                            {{field.label}}
+                        </div>
+                        <div class="col-md my-2">
+                            {{field}}
+                        </div>
+                    </div>
+                {% endfor %}
+                <button class="btn btn-primary" type="submit" name="update-information">submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
